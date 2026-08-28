@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poddar Classes | Excellence in Academic & Competitive Coaching</title>
-  <meta name="description" content="Official website for Poddar Classes. Comprehensive coaching, study resources, test series, and personalized mentorship." />
+  <meta name="description" content="Official website for Poddar Classes. Comprehensive coaching, daily interactive quizzes, study resources, and personalized mentorship in Bhagalpur." />
   
   <style>
     :root {
@@ -80,7 +80,7 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       align-items: center;
       list-style: none;
     }
@@ -149,7 +149,7 @@
 
     .btn-whatsapp {
       background-color: var(--whatsapp-green);
-      color: #ffffff;
+      color: #ffffff !important;
       box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
     }
 
@@ -157,6 +157,38 @@
       background-color: var(--whatsapp-hover);
       box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
       transform: translateY(-1px);
+    }
+
+    /* --- Floating WhatsApp Button --- */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 32px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1eb956;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
     }
 
     /* --- Hero Section --- */
@@ -259,6 +291,335 @@
     .feature-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
+    }
+
+    /* --- Exciting Quiz Banner & Trophy Display --- */
+    .quiz-section {
+      background: linear-gradient(135deg, #091a42 0%, #1e1b4b 100%);
+      color: #ffffff;
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .quiz-card-wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    }
+
+    .quiz-content h2 {
+      font-size: 2.3rem;
+      margin-bottom: 0.85rem;
+      color: #ffffff;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .quiz-content h2 span {
+      color: #fbbf24;
+    }
+
+    .quiz-content p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .quiz-perks {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .quiz-perk-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+    }
+
+    .quiz-launcher-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .quiz-launcher-box label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: #fde047;
+    }
+
+    .quiz-select-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .quiz-class-select {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .quiz-class-select:focus {
+      border-color: #fbbf24;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+    }
+
+    /* Excited Student & Trophy Visual Card */
+    .trophy-showcase-card {
+      background: linear-gradient(180deg, rgba(254, 240, 138, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border: 2px solid rgba(251, 191, 36, 0.4);
+      border-radius: 20px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+    }
+
+    .trophy-avatar-art {
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+      animation: bounceStudent 2.5s ease-in-out infinite;
+    }
+
+    @keyframes bounceStudent {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.05); }
+    }
+
+    .trophy-showcase-card h3 {
+      font-size: 1.45rem;
+      color: #fde047;
+      margin-bottom: 0.35rem;
+      font-weight: 800;
+    }
+
+    .trophy-showcase-card p {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .reward-pill-box {
+      display: inline-flex;
+      background: #f59e0b;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* --- Interactive 20-Mark Quiz Modal --- */
+    .quiz-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .quiz-modal {
+      background: #ffffff;
+      color: var(--text-main);
+      width: 100%;
+      max-width: 650px;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+      animation: modalScale 0.25s ease-out;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes modalScale {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .quiz-modal-header {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .quiz-modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .quiz-close-btn {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.75rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .quiz-modal-body {
+      padding: 1.75rem;
+      overflow-y: auto;
+    }
+
+    .quiz-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .quiz-subject-tag {
+      background: #e0e7ff;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .quiz-progress-text {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .quiz-question-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+      line-height: 1.4;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .quiz-opt-btn {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      padding: 1rem 1.15rem;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      color: #334155;
+    }
+
+    .quiz-opt-btn:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: var(--primary);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    /* Result Card View */
+    .quiz-result-view {
+      text-align: center;
+      padding: 1rem 0;
+      display: none;
+    }
+
+    .result-trophy-display {
+      font-size: 4.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .score-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      border: 3px solid var(--primary);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin-bottom: 1.25rem;
+    }
+
+    .score-circle span {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .score-grade-msg {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .score-advice-text {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 480px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.5;
     }
 
     /* --- Courses --- */
@@ -395,7 +756,6 @@
       font-size: 0.95rem;
     }
 
-    /* FAQ Card & Details styling */
     .faq-container {
       display: flex;
       flex-direction: column;
@@ -551,9 +911,9 @@
 
     /* --- Responsive Queries --- */
     @media (max-width: 900px) {
-      .split-layout {
+      .split-layout, .quiz-card-wrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
       }
       .contact-form-card {
         padding: 1.75rem;
@@ -568,15 +928,22 @@
 </head>
 <body>
 
+  <a href="https://wa.me/917903638853?text=Hi%20Poddar%20Classes,%20I%20want%20to%20know%20more%20about%20your%20courses." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 2a13.9 13.9 0 0 0-12 20.9L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1-1.1 1.2-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6a.6.6 0 0 0 0-.6c-.1-.2-.8-2-1.1-2.7s-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2 7.5 7.5 0 0 0 1.6 4 17.3 17.3 0 0 0 6.6 5.8 22.5 22.5 0 0 0 2.2.8 5.3 5.3 0 0 0 2.4.2 3.9 3.9 0 0 0 2.6-1.8 3.2 3.2 0 0 0 .2-1.8c-.1-.1-.3-.2-.7-.4z"/>
+    </svg>
+  </a>
+
   <nav>
     <div class="container nav-container">
       <a href="#" class="brand-logo">PODDAR <span>CLASSES</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#quiz">Scholarship Quiz</a></li>
         <li><a href="#courses">Courses</a></li>
         <li><a href="#resources">Resources</a></li>
         <li><a href="#contact">Admissions</a></li>
-        <li><a href="#contact" class="btn btn-primary">Enroll Now</a></li>
+        <li><a href="https://wa.me/917903638853?text=Hi%20Poddar%20Classes,%20I%20have%20an%20enquiry" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Us</a></li>
       </ul>
     </div>
   </nav>
@@ -585,7 +952,7 @@
     <div class="container">
       <span class="hero-tagline">Admissions Open for New Batches</span>
       <h1>Build Strong Concepts.<br />Achieve Top Results.</h1>
-      <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials.</p>
+      <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials in Tilkamanjhi, Bhagalpur.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-accent">Apply for Admission</a>
         <a href="tel:+916207987945" class="btn btn-outline-light">📞 Call Now</a>
@@ -625,6 +992,84 @@
     </div>
   </section>
 
+  <section id="quiz" class="quiz-section">
+    <div class="container">
+      <div class="quiz-card-wrapper">
+        
+        <div class="quiz-content">
+          <span class="hero-tagline" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.5);">⚡ 20 Marks Challenge</span>
+          <h2>Test Your Brain in <span>Maths, Science & SST</span></h2>
+          <p>Select your class and attempt our 20-mark speed test. Every attempt loads fresh questions from our 160-question bank. Score 90%+ to unlock scholarship rewards & direct mentorship perks!</p>
+          
+          <div class="quiz-perks">
+            <div class="quiz-perk-item"><span>📐</span> Mathematics</div>
+            <div class="quiz-perk-item"><span>🔬</span> Science</div>
+            <div class="quiz-perk-item"><span>🌍</span> Social Science</div>
+            <div class="quiz-perk-item"><span>⏱️</span> 20 Marks / 20 Qs</div>
+          </div>
+
+          <div class="quiz-launcher-box">
+            <label for="studentClassSelect">Select Your Class to Start:</label>
+            <div class="quiz-select-group">
+              <select id="studentClassSelect" class="quiz-class-select">
+                <option value="10">Class 10 (Board Target)</option>
+                <option value="9">Class 9 (Foundation)</option>
+                <option value="8">Class 8 (Pre-Foundation)</option>
+                <option value="7">Class 7 (Fundamentals)</option>
+                <option value="6">Class 6 (Basics & Aptitude)</option>
+              </select>
+              <button onclick="startTwentyMarkQuiz()" class="btn btn-accent" style="padding: 0.85rem 1.5rem; font-size: 1rem;">
+                🚀 Start 20-Mark Quiz
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="trophy-showcase-card">
+          <div class="trophy-avatar-art">🏆🧑‍🎓✨</div>
+          <h3>Win Scholarship Perks!</h3>
+          <p>Instant scorecard analysis with personalized recommendations for your board & competitive exams.</p>
+          <div class="reward-pill-box">Top Scorers Get Free DPP Material</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="quizModal" class="quiz-modal-overlay">
+    <div class="quiz-modal">
+      
+      <div class="quiz-modal-header">
+        <h3 id="modalQuizTitle">📝 20-Mark Quiz Challenge</h3>
+        <button class="quiz-close-btn" onclick="closeQuizModal()">&times;</button>
+      </div>
+
+      <div class="quiz-modal-body">
+        <div id="quizActiveView">
+          <div class="quiz-meta-bar">
+            <span class="quiz-subject-tag" id="qSubjectTag">Mathematics</span>
+            <span class="quiz-progress-text" id="qProgressText">Question 1 of 20 (1 Mark)</span>
+          </div>
+          <div class="quiz-question-text" id="qQuestionText">Loading Question...</div>
+          <div class="quiz-options-list" id="qOptionsContainer"></div>
+        </div>
+
+        <div id="quizResultView" class="quiz-result-view">
+          <div class="result-trophy-display" id="resultEmoji">🏆</div>
+          <div class="score-circle">
+            <span id="finalScoreVal">18/20</span>
+          </div>
+          <h3 class="score-grade-msg" id="scoreGradeTitle">Outstanding Performance!</h3>
+          <p class="score-advice-text" id="scoreAdviceBody">Your grasp on concepts is exceptional.</p>
+          <a id="claimScoreBtn" href="#" class="btn btn-whatsapp" style="width: 100%; padding: 0.9rem; font-size: 1rem;">
+            💬 Claim Batch Scholarship via WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <section id="courses" style="background-color: #f8fafc; border-top: 1px solid var(--border);">
     <div class="container">
       <div class="section-header">
@@ -636,7 +1081,7 @@
         <div class="course-card">
           <div class="course-header">
             <h3>Foundation Course</h3>
-            <span>School Curriculum & Fundamentals</span>
+            <span>Class 6th to 10th Fundamentals</span>
           </div>
           <div class="course-body">
             <ul class="course-features">
@@ -671,4 +1116,490 @@
             <span>Final Revision & Mock Series</span>
           </div>
           <div class="course-body">
-            <ul
+            <ul class="course-features">
+              <li>High-yield topic revision sprints</li>
+              <li>Formula sheets & quick-reference charts</li>
+              <li>Full-length simulated test papers</li>
+              <li>Special doubt-resolution marathons</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Enroll in Crash Course</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="container">
+      <div class="portal-banner">
+        <div class="portal-text">
+          <h3>📦 Student Study Portal & GitHub Repo</h3>
+          <p>Directly download syllabus PDFs, weekly assignment solutions, practice sheets, and lecture summaries maintained live by our faculty.</p>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn btn-accent">Open GitHub Study Portal ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-contact-faq">
+    <div class="container">
+      <div class="split-layout">
+        
+        <div>
+          <div class="split-header">
+            <span class="side-badge faq-badge">Common Questions</span>
+            <h3>Frequently Asked Questions</h3>
+            <p>Everything you need to know about our batches, resources, and mentoring.</p>
+          </div>
+
+          <div class="faq-container">
+            <details class="faq-item" open>
+              <summary class="faq-question">
+                What is the typical batch size at Poddar Classes?
+                <span class="faq-chevron">▼</span>
+              </summary>
+              <div class="faq-answer">
+                We purposefully maintain small, focused batch sizes to guarantee individual mentorship, interactive class participation, and prompt doubt resolution.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How are student evaluations and tests conducted?
+                <span class="faq-chevron">▼</span>
+              </summary>
+              <div class="faq-answer">
+                We conduct weekly unit tests alongside comprehensive monthly mock exams. Every assessment includes itemized performance analytics and detailed paper discussions.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                How do students access digital notes and assignments?
+                <span class="faq-chevron">▼</span>
+              </summary>
+              <div class="faq-answer">
+                Enrolled students receive printed classroom modules as well as 24/7 online access to revision notes, question banks, and DPP solutions through our official GitHub repository.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                Are demo or trial sessions available for new students?
+                <span class="faq-chevron">▼</span>
+              </summary>
+              <div class="faq-answer">
+                Yes! Prospective students can attend up to two demo classes upon submitting the admission enquiry form.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-form-card">
+            <div class="split-header" style="margin-bottom: 1.25rem;">
+              <span class="side-badge form-badge">Direct WhatsApp Connect</span>
+              <h3 style="font-size: 1.45rem;">Admission Enquiry</h3>
+              <p>Fill out the form below to message our counseling desk directly on WhatsApp.</p>
+            </div>
+            
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+              <div class="form-group">
+                <label for="wa_name">Student Full Name</label>
+                <input type="text" id="wa_name" placeholder="e.g. Rahul Kumar" required />
+              </div>
+
+              <div class="form-group">
+                <label for="wa_phone">WhatsApp Contact Number</label>
+                <input type="tel" id="wa_phone" placeholder="e.g. 9876543210" required />
+              </div>
+
+              <div class="form-group">
+                <label for="wa_program">Select Program</label>
+                <select id="wa_program" required>
+                  <option value="">Select a Course</option>
+                  <option value="Foundation Course">Foundation Course (Class 6 - 10)</option>
+                  <option value="Target Exam Batch">Target Exam Batch</option>
+                  <option value="Crash Course & Test Series">Crash Course & Test Series</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="wa_message">Queries / Remarks (Optional)</label>
+                <textarea id="wa_message" rows="3" placeholder="Current class, target exam, or questions..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 0.85rem; font-size: 1rem;">
+                💬 Send Enquiry via WhatsApp
+              </button>
+              
+              <p class="form-note">🔒 Your information is confidential and used only for admissions.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="color: #fbbf24;">PODDAR CLASSES</h4>
+          <p>Dedicated to delivering quality coaching, solid conceptual grounding, and continuous mentorship for competitive and academic success in Bhagalpur.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#quiz">Scholarship Quiz</a></li>
+            <li><a href="#courses">Courses Offered</a></li>
+            <li><a href="#resources">Digital Notes</a></li>
+            <li><a href="#contact">Admission Desk</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li>📍 Pranwati Lane Vikramshila colony Tilkamanjhi Bhagalpur 812001</li>
+            <li>📞 Phone: +916207987945</li>
+            <li>💬 WhatsApp: +917903638853</li>
+            <li>✉️ Email: poddarclasses1@gmail.com</li>
+            <li>🕒 Mon – Sat: 8:00 AM – 7:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Poddar Classes. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const coachingWhatsApp = "917903638853";
+
+    // --- WhatsApp Admission Enquiry Script ---
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('wa_name').value;
+      const phone = document.getElementById('wa_phone').value;
+      const program = document.getElementById('wa_program').value;
+      const message = document.getElementById('wa_message').value;
+
+      const text = `*New Admission Enquiry - Poddar Classes*%0A` +
+                   `*Name:* ${encodeURIComponent(name)}%0A` +
+                   `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                   `*Program:* ${encodeURIComponent(program)}%0A` +
+                   `*Message:* ${encodeURIComponent(message || 'N/A')}`;
+
+      const url = `https://wa.me/${coachingWhatsApp}?text=${text}`;
+      window.location.href = url;
+    }
+
+    // --- Master 160-Question Database (Maths, Science & Social Science) ---
+    const questionBank = {
+      // CLASS 10 (35 Questions)
+      "10": [
+        { s: "Mathematics", q: "What is the discriminant of 2x² - 4x + 3 = 0?", opts: ["-8", "8", "4", "-16"], a: 0 },
+        { s: "Mathematics", q: "The HCF of 96 and 404 is:", opts: ["4", "2", "8", "12"], a: 0 },
+        { s: "Mathematics", q: "If sin A = 3/5, what is the value of cos A?", opts: ["4/5", "3/4", "5/4", "1/2"], a: 0 },
+        { s: "Mathematics", q: "The 10th term of the AP: 2, 7, 12, ... is:", opts: ["47", "50", "42", "52"], a: 0 },
+        { s: "Mathematics", q: "A line intersecting a circle in two distinct points is called a:", opts: ["Secant", "Tangent", "Chord", "Diameter"], a: 0 },
+        { s: "Mathematics", q: "What is the probability of an impossible event?", opts: ["0", "1", "0.5", "-1"], a: 0 },
+        { s: "Mathematics", q: "The distance of point P(3, 4) from the origin is:", opts: ["5 units", "7 units", "25 units", "1 unit"], a: 0 },
+        { s: "Mathematics", q: "The perimeter of a semicircular protractor of radius 'r' is:", opts: ["πr + 2r", "πr", "2πr", "πr²"], a: 0 },
+        { s: "Mathematics", q: "If the tangents PA and PB from point P to a circle with centre O are inclined at 80°, then ∠POA is:", opts: ["50°", "60°", "70°", "80°"], a: 0 },
+        { s: "Mathematics", q: "The area of a circle that can be inscribed in a square of side 6 cm is:", opts: ["9π cm²", "36π cm²", "18π cm²", "12π cm²"], a: 0 },
+        { s: "Mathematics", q: "Mode and mean of data are 12 and 15 respectively. What is the median?", opts: ["14", "13", "16", "15"], a: 0 },
+        { s: "Mathematics", q: "The pair of linear equations x + 2y + 5 = 0 and -3x - 6y + 1 = 0 has:", opts: ["No solution", "Infinitely many solutions", "Unique solution", "Two solutions"], a: 0 },
+        { s: "Science", q: "Which chemical compound is known as Bleaching Powder?", opts: ["CaOCl₂", "NaHCO₃", "Na₂CO₃", "CaSO₄"], a: 0 },
+        { s: "Science", q: "The image formed by a convex mirror is always:", opts: ["Virtual and erect", "Real and inverted", "Real and magnified", "Virtual and enlarged"], a: 0 },
+        { s: "Science", q: "The breakdown of pyruvate into carbon dioxide, water, and energy takes place in:", opts: ["Mitochondria", "Cytoplasm", "Chloroplast", "Nucleus"], a: 0 },
+        { s: "Science", q: "The SI unit of electric potential difference is:", opts: ["Volt", "Ampere", "Ohm", "Watt"], a: 0 },
+        { s: "Science", q: "Which acid is naturally present in nettle sting?", opts: ["Methanoic acid", "Ethanoic acid", "Citric acid", "Oxalic acid"], a: 0 },
+        { s: "Science", q: "Mendel conducted his hybridization experiments on:", opts: ["Garden Pea", "Sweet Pea", "Maize", "Wheat"], a: 0 },
+        { s: "Science", q: "Which metal is the best conductor of electricity?", opts: ["Silver", "Copper", "Aluminium", "Gold"], a: 0 },
+        { s: "Science", q: "Which plant hormone promotes cell division?", opts: ["Cytokinin", "Auxin", "Abscisic Acid", "Gibberellin"], a: 0 },
+        { s: "Science", q: "The resistance of a conductor is inversely proportional to its:", opts: ["Area of cross-section", "Length", "Resistivity", "Temperature"], a: 0 },
+        { s: "Science", q: "An aqueous solution turns red litmus paper blue. Its pH is likely to be:", opts: ["10", "1", "4", "5"], a: 0 },
+        { s: "Science", q: "The functional unit of kidneys in humans is called:", opts: ["Nephron", "Neuron", "Alveoli", "Glomerulus"], a: 0 },
+        { s: "Social Science", q: "Who wrote the famous book 'Hind Swaraj' in 1909?", opts: ["Mahatma Gandhi", "Jawaharlal Nehru", "B.R. Ambedkar", "Subhas Chandra Bose"], a: 0 },
+        { s: "Social Science", q: "Which soil is most suitable for cotton cultivation in India?", opts: ["Black Soil", "Alluvial Soil", "Red Soil", "Laterite Soil"], a: 0 },
+        { s: "Social Science", q: "In which year was the Non-Cooperation Khilafat Movement launched?", opts: ["1921", "1919", "1930", "1942"], a: 0 },
+        { s: "Social Science", q: "Which international organization issues currency notes in India on behalf of the Central Govt?", opts: ["Reserve Bank of India", "State Bank of India", "Finance Ministry", "World Bank"], a: 0 },
+        { s: "Social Science", q: "Power shared among different organs of government is called:", opts: ["Horizontal distribution", "Vertical distribution", "Federal system", "Community system"], a: 0 },
+        { s: "Social Science", q: "Which Indian state has the highest literacy rate?", opts: ["Kerala", "Bihar", "Goa", "Tamil Nadu"], a: 0 },
+        { s: "Social Science", q: "Which sector continues to be the largest employer in India?", opts: ["Primary Sector", "Secondary Sector", "Tertiary Sector", "IT Sector"], a: 0 },
+        { s: "Social Science", q: "The treaty of Vienna was signed in which year?", opts: ["1815", "1820", "1789", "1832"], a: 0 },
+        { s: "Social Science", q: "Rabi crops are harvested in the months of:", opts: ["April to June", "October to December", "July to September", "January to March"], a: 0 },
+        { s: "Social Science", q: "Kudremukh iron ore mine is located in which Indian state?", opts: ["Karnataka", "Odisha", "Jharkhand", "Chhattisgarh"], a: 0 },
+        { s: "Social Science", q: "The slogan 'Do or Die' was given by Mahatma Gandhi during which movement?", opts: ["Quit India Movement", "Civil Disobedience", "Rowlatt Satyagraha", "Champaran Satyagraha"], a: 0 },
+        { s: "Social Science", q: "Which is a major formal source of credit in rural India?", opts: ["Commercial Banks", "Moneylenders", "Traders", "Relatives"], a: 0 }
+      ],
+
+      // CLASS 9 (35 Questions)
+      "9": [
+        { s: "Mathematics", q: "Every rational number is a:", opts: ["Real number", "Natural number", "Whole number", "Integer"], a: 0 },
+        { s: "Mathematics", q: "The zero of polynomial p(x) = 2x + 5 is:", opts: ["-5/2", "5/2", "2/5", "-2/5"], a: 0 },
+        { s: "Mathematics", q: "Points (-3, 5) lies in which quadrant?", opts: ["Second Quadrant", "First Quadrant", "Third Quadrant", "Fourth Quadrant"], a: 0 },
+        { s: "Mathematics", q: "The linear equation 2x + 3y = 6 cuts the y-axis at:", opts: ["(0, 2)", "(3, 0)", "(2, 0)", "(0, 3)"], a: 0 },
+        { s: "Mathematics", q: "If two interior angles on the same side of a transversal are equal, they are each:", opts: ["90°", "180°", "45°", "60°"], a: 0 },
+        { s: "Mathematics", q: "In a right triangle, the longest side is:", opts: ["Hypotenuse", "Base", "Perpendicular", "Altitude"], a: 0 },
+        { s: "Mathematics", q: "Area of an equilateral triangle with side 'a' is:", opts: ["(√3/4)a²", "(√3/2)a²", "(1/2)a²", "√3a²"], a: 0 },
+        { s: "Mathematics", q: "Total surface area of a solid hemisphere of radius 'r' is:", opts: ["3πr²", "2πr²", "4πr²", "(2/3)πr³"], a: 0 },
+        { s: "Mathematics", q: "Degree of a non-zero constant polynomial is:", opts: ["0", "1", "Not defined", "2"], a: 0 },
+        { s: "Mathematics", q: "The class mark of the class interval 90-120 is:", opts: ["105", "100", "110", "115"], a: 0 },
+        { s: "Mathematics", q: "Angles in the same segment of a circle are:", opts: ["Equal", "Supplementary", "Complementary", "Unequal"], a: 0 },
+        { s: "Science", q: "The SI unit of acceleration is:", opts: ["m/s²", "m/s", "km/h", "kg·m/s"], a: 0 },
+        { s: "Science", q: "Rate of change of momentum is directly proportional to:", opts: ["Applied Unbalanced Force", "Velocity", "Mass", "Acceleration"], a: 0 },
+        { s: "Science", q: "Which cell organelle is called the 'Suicide Bag' of the cell?", opts: ["Lysosome", "Mitochondria", "Ribosome", "Centrosome"], a: 0 },
+        { s: "Science", q: "Tissues that connect muscle to bone are called:", opts: ["Tendons", "Ligaments", "Cartilage", "Areolar"], a: 0 },
+        { s: "Science", q: "The process of change of liquid into vapor at any temperature below boiling point is:", opts: ["Evaporation", "Sublimation", "Condensation", "Fusion"], a: 0 },
+        { s: "Science", q: "What is the formula of Aluminium Oxide?", opts: ["Al₂O₃", "AlO", "Al₃O₂", "AlO₂"], a: 0 },
+        { s: "Science", q: "Which subatomic particle was discovered by J.J. Thomson?", opts: ["Electron", "Proton", "Neutron", "Positron"], a: 0 },
+        { s: "Science", q: "Value of acceleration due to gravity (g) at Earth's surface is:", opts: ["9.8 m/s²", "9.8 km/s²", "8.9 m/s²", "10.8 m/s²"], a: 0 },
+        { s: "Science", q: "Sound waves in air are:", opts: ["Longitudinal waves", "Transverse waves", "Electromagnetic waves", "Radio waves"], a: 0 },
+        { s: "Science", q: "The energy possessed by a body due to its position or height is:", opts: ["Potential Energy", "Kinetic Energy", "Thermal Energy", "Chemical Energy"], a: 0 },
+        { s: "Science", q: "Tyndall effect is exhibited by:", opts: ["Colloidal solution", "True solution", "Pure water", "Sugar solution"], a: 0 },
+        { s: "Social Science", q: "The storming of the Bastille occurred on:", opts: ["14 July 1789", "4 August 1789", "5 May 1789", "20 June 1789"], a: 0 },
+        { s: "Social Science", q: "Who was the leader of the Bolshevik Party in Russia?", opts: ["Vladimir Lenin", "Karl Marx", "Tsar Nicholas II", "Leon Trotsky"], a: 0 },
+        { s: "Social Science", q: "The longitudinal extent of India is:", opts: ["68°7' E to 97°25' E", "8°4' N to 37°6' N", "60°7' E to 90°25' E", "70° E to 95° E"], a: 0 },
+        { s: "Social Science", q: "Which is the highest peak in the Eastern Ghats of India?", opts: ["Mahendragiri", "Anamudi", "Doda Betta", "Kanchenjunga"], a: 0 },
+        { s: "Social Science", q: "River Indus originates near which lake in Tibet?", opts: ["Mansarovar", "Wular", "Dal", "Sambhar"], a: 0 },
+        { s: "Social Science", q: "Apartheid was an official system of racial discrimination in:", opts: ["South Africa", "Zimbabwe", "Kenya", "Namibia"], a: 0 },
+        { s: "Social Science", q: "The minimum voting age for Indian citizens is:", opts: ["18 years", "21 years", "16 years", "20 years"], a: 0 },
+        { s: "Social Science", q: "Which state of India has the lowest poverty ratio?", opts: ["Kerala", "Bihar", "Odisha", "Uttar Pradesh"], a: 0 },
+        { s: "Social Science", q: "Who was the president of the Constituent Assembly of India?", opts: ["Dr. Rajendra Prasad", "Dr. B.R. Ambedkar", "Jawaharlal Nehru", "Sardar Patel"], a: 0 },
+        { s: "Social Science", q: "Green Revolution in India was primarily associated with:", opts: ["Wheat and Rice", "Cotton and Jute", "Tea and Coffee", "Pulses and Oilseeds"], a: 0 },
+        { s: "Social Science", q: "The northern plain of India is formed of which soil deposit?", opts: ["Alluvial soil", "Black soil", "Laterite soil", "Red soil"], a: 0 },
+        { s: "Social Science", q: "Hitler became the Chancellor of Germany in which year?", opts: ["1933", "1939", "1923", "1945"], a: 0 },
+        { s: "Social Science", q: "National Rural Employment Guarantee Act (MGNREGA) guarantees how many days of employment?", opts: ["100 Days", "150 Days", "200 Days", "75 Days"], a: 0 }
+      ],
+
+      // CLASS 8 (30 Questions)
+      "8": [
+        { s: "Mathematics", q: "The additive inverse of -7/19 is:", opts: ["7/19", "-19/7", "19/7", "-7/19"], a: 0 },
+        { s: "Mathematics", q: "Solve for x: 3x - 5 = 10. The value of x is:", opts: ["5", "3", "15", "4"], a: 0 },
+        { s: "Mathematics", q: "How many diagonals does a regular hexagon have?", opts: ["9", "6", "8", "12"], a: 0 },
+        { s: "Mathematics", q: "The square of which of the following will be an odd number?", opts: ["431", "2826", "7778", "8200"], a: 0 },
+        { s: "Mathematics", q: "Cube root of 1331 is:", opts: ["11", "13", "17", "19"], a: 0 },
+        { s: "Mathematics", q: "What is 20% of 450?", opts: ["90", "80", "100", "75"], a: 0 },
+        { s: "Mathematics", q: "The value of (a + b)² is:", opts: ["a² + 2ab + b²", "a² - 2ab + b²", "a² + b²", "a² + ab + b²"], a: 0 },
+        { s: "Mathematics", q: "Area of a trapezium with parallel sides 10 cm and 12 cm, and height 4 cm is:", opts: ["44 cm²", "88 cm²", "22 cm²", "40 cm²"], a: 0 },
+        { s: "Mathematics", q: "What is the value of 5⁰?", opts: ["1", "0", "5", "Undefined"], a: 0 },
+        { s: "Mathematics", q: "If 12 men complete a work in 20 days, how many men will complete it in 15 days?", opts: ["16 men", "18 men", "14 men", "20 men"], a: 0 },
+        { s: "Science", q: "Which microorganism is responsible for converting milk into curd?", opts: ["Lactobacillus", "Yeast", "Rhizobium", "Amoeba"], a: 0 },
+        { s: "Science", q: "Which synthetic fiber is known as artificial silk?", opts: ["Rayon", "Nylon", "Polyester", "Acrylic"], a: 0 },
+        { s: "Science", q: "The metal which is liquid at room temperature is:", opts: ["Mercury", "Bromine", "Sodium", "Gallium"], a: 0 },
+        { s: "Science", q: "The purest natural form of carbon among coal fuels is:", opts: ["Anthracite", "Bituminous", "Lignite", "Peat"], a: 0 },
+        { s: "Science", q: "Which gas supports combustion?", opts: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"], a: 0 },
+        { s: "Science", q: "The master endocrine gland in human body is:", opts: ["Pituitary Gland", "Thyroid", "Adrenal", "Pancreas"], a: 0 },
+        { s: "Science", q: "The force per unit area is termed as:", opts: ["Pressure", "Friction", "Tension", "Work"], a: 0 },
+        { s: "Science", q: "The unit used to measure frequency of sound is:", opts: ["Hertz (Hz)", "Decibel (dB)", "Meter (m)", "Pascal (Pa)"], a: 0 },
+        { s: "Science", q: "Which device is used to protect high buildings from lightning strikes?", opts: ["Lightning Conductor", "Voltmeter", "Electroscope", "Fuse"], a: 0 },
+        { s: "Science", q: "Which is the brightest planet in our solar system as seen from Earth?", opts: ["Venus", "Jupiter", "Mars", "Saturn"], a: 0 },
+        { s: "Social Science", q: "Who was the last powerful Mughal emperor in India?", opts: ["Aurangzeb", "Akbar", "Bahadur Shah Zafar", "Shah Jahan"], a: 0 },
+        { s: "Social Science", q: "The Battle of Plassey was fought in the year:", opts: ["1757", "1764", "1857", "1761"], a: 0 },
+        { s: "Social Science", q: "Who was the Governor-General who introduced the Doctrine of Lapse?", opts: ["Lord Dalhousie", "Lord Wellesley", "Lord Curzon", "Lord Cornwallis"], a: 0 },
+        { s: "Social Science", q: "Resources that are drawn from nature and used without much modification are called:", opts: ["Natural Resources", "Human-made Resources", "Capital Resources", "Biotic Resources"], a: 0 },
+        { s: "Social Science", q: "Which continent is the leading producer of iron ore in the world?", opts: ["Asia", "Europe", "North America", "Australia"], a: 0 },
+        { s: "Social Science", q: "The golden fiber of India refers to:", opts: ["Jute", "Cotton", "Silk", "Wool"], a: 0 },
+        { s: "Social Science", q: "Who is known as the Father of the Indian Constitution?", opts: ["Dr. B.R. Ambedkar", "Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Patel"], a: 0 },
+        { s: "Social Science", q: "The supreme judicial organ of India is:", opts: ["Supreme Court", "High Court", "District Court", "Parliament"], a: 0 },
+        { s: "Social Science", q: "Birsa Munda belonged to which tribal region?", opts: ["Chotanagpur", "Santhal Pargana", "Bastar", "Khasi Hills"], a: 0 },
+        { s: "Social Science", q: "Which article of the Indian Constitution abolishes Untouchability?", opts: ["Article 17", "Article 14", "Article 21", "Article 19"], a: 0 }
+      ],
+
+      // CLASS 7 (30 Questions)
+      "7": [
+        { s: "Mathematics", q: "The product of (-1) × (-1) × (-1) is:", opts: ["-1", "1", "3", "-3"], a: 0 },
+        { s: "Mathematics", q: "What is 3/4 of 36?", opts: ["27", "24", "18", "30"], a: 0 },
+        { s: "Mathematics", q: "The mean of the first 5 whole numbers (0, 1, 2, 3, 4) is:", opts: ["2", "2.5", "3", "1.5"], a: 0 },
+        { s: "Mathematics", q: "If 2x + 3 = 11, then x equals:", opts: ["4", "7", "3", "5"], a: 0 },
+        { s: "Mathematics", q: "The supplement of an angle measuring 70° is:", opts: ["110°", "20°", "90°", "180°"], a: 0 },
+        { s: "Mathematics", q: "The sum of all three angles of a triangle is:", opts: ["180°", "360°", "90°", "270°"], a: 0 },
+        { s: "Mathematics", q: "Convert the ratio 3 : 4 into percentage:", opts: ["75%", "60%", "80%", "70%"], a: 0 },
+        { s: "Mathematics", q: "Area of a parallelogram with base 8 cm and height 5 cm is:", opts: ["40 cm²", "20 cm²", "26 cm²", "80 cm²"], a: 0 },
+        { s: "Mathematics", q: "The value of 2³ × 2² is:", opts: ["32", "64", "16", "24"], a: 0 },
+        { s: "Mathematics", q: "How many lines of symmetry does an equilateral triangle have?", opts: ["3", "1", "2", "6"], a: 0 },
+        { s: "Science", q: "The green pigment present in plant leaves is:", opts: ["Chlorophyll", "Carotene", "Anthocyanin", "Hemoglobin"], a: 0 },
+        { s: "Science", q: "Which organ produces bile juice in the human body?", opts: ["Liver", "Pancreas", "Stomach", "Gallbladder"], a: 0 },
+        { s: "Science", q: "The normal human body temperature is approximately:", opts: ["37°C", "98.6°C", "35°C", "40°C"], a: 0 },
+        { s: "Science", q: "Which of the following is a natural acid-base indicator?", opts: ["Turmeric", "Phenolphthalein", "Methyl Orange", "Hydrochloric Acid"], a: 0 },
+        { s: "Science", q: "Rusting of iron is an example of a:", opts: ["Chemical change", "Physical change", "Reversible change", "Biological change"], a: 0 },
+        { s: "Science", q: "The breathing organs of fish are called:", opts: ["Gills", "Lungs", "Trachea", "Spiracles"], a: 0 },
+        { s: "Science", q: "Blood vessels that carry oxygenated blood away from the heart are:", opts: ["Arteries", "Veins", "Capillaries", "Nerves"], a: 0 },
+        { s: "Science", q: "The reproductive part of a plant is the:", opts: ["Flower", "Leaf", "Root", "Stem"], a: 0 },
+        { s: "Science", q: "The basic unit of speed is:", opts: ["m/s", "km/h", "m/min", "km/s"], a: 0 },
+        { s: "Science", q: "Which mirror is used by dentists to view enlarged images of teeth?", opts: ["Concave mirror", "Convex mirror", "Plane mirror", "Cylindrical mirror"], a: 0 },
+        { s: "Social Science", q: "Who was the founder of the Mughal Empire in India in 1526?", opts: ["Babur", "Humayun", "Akbar", "Sher Shah Suri"], a: 0 },
+        { s: "Social Science", q: "The tax called 'Jizya' was re-imposed in Mughal India by:", opts: ["Aurangzeb", "Akbar", "Jahangir", "Shah Jahan"], a: 0 },
+        { s: "Social Science", q: "The innermost layer of the Earth is called:", opts: ["Core", "Crust", "Mantle", "Lithosphere"], a: 0 },
+        { s: "Social Science", q: "Rocks formed by the cooling and solidification of magma are:", opts: ["Igneous rocks", "Sedimentary rocks", "Metamorphic rocks", "Fossil rocks"], a: 0 },
+        { s: "Social Science", q: "Which layer of the atmosphere contains the protective Ozone layer?", opts: ["Stratosphere", "Troposphere", "Mesosphere", "Thermosphere"], a: 0 },
+        { s: "Social Science", q: "The world's largest tropical rainforest (Amazon Basin) is located in:", opts: ["South America", "Africa", "Asia", "North America"], a: 0 },
+        { s: "Social Science", q: "In democracy, universal adult franchise is based on the idea of:", opts: ["Equality", "Freedom", "Property", "Education"], a: 0 },
+        { s: "Social Science", q: "Who is the executive head of a state government in India?", opts: ["Chief Minister", "Governor", "President", "Speaker"], a: 0 },
+        { s: "Social Science", q: "The famous temple at Thanjavur was built during the reign of:", opts: ["Cholas", "Pandyas", "Cheras", "Pallavas"], a: 0 },
+        { s: "Social Science", q: "The movement of ocean water caused by the gravitational pull of the moon and sun is:", opts: ["Tides", "Waves", "Ocean Currents", "Tsunami"], a: 0 }
+      ],
+
+      // CLASS 6 (30 Questions)
+      "6": [
+        { s: "Mathematics", q: "What is the predecessor of 1000?", opts: ["999", "1001", "990", "900"], a: 0 },
+        { s: "Mathematics", q: "Which of the following numbers is prime?", opts: ["29", "15", "21", "27"], a: 0 },
+        { s: "Mathematics", q: "The HCF of 12 and 18 is:", opts: ["6", "3", "2", "12"], a: 0 },
+        { s: "Mathematics", q: "The value of (-8) + (+5) is:", opts: ["-3", "3", "-13", "13"], a: 0 },
+        { s: "Mathematics", q: "What fraction of an hour is 20 minutes?", opts: ["1/3", "1/4", "1/2", "2/5"], a: 0 },
+        { s: "Mathematics", q: "Perimeter of a regular pentagon of side 6 cm is:", opts: ["30 cm", "24 cm", "36 cm", "18 cm"], a: 0 },
+        { s: "Mathematics", q: "The ratio of 20 to 100 in simplest form is:", opts: ["1 : 5", "1 : 4", "2 : 5", "1 : 10"], a: 0 },
+        { s: "Mathematics", q: "An angle whose measure is greater than 90° and less than 180° is an:", opts: ["Obtuse angle", "Acute angle", "Right angle", "Reflex angle"], a: 0 },
+        { s: "Mathematics", q: "How many lines can pass through two given distinct points?", opts: ["Only one line", "Two lines", "Infinite lines", "Zero lines"], a: 0 },
+        { s: "Mathematics", q: "The Roman numeral for 50 is:", opts: ["L", "C", "D", "X"], a: 0 },
+        { s: "Science", q: "Deficiency of Vitamin C in human body causes:", opts: ["Scurvy", "Rickets", "Beriberi", "Night Blindness"], a: 0 },
+        { s: "Science", q: "Which of the following is a herb?", opts: ["Tomato", "Mango", "Lemon", "Neem"], a: 0 },
+        { s: "Science", q: "The joint present in human shoulder and hip is:", opts: ["Ball and Socket Joint", "Hinge Joint", "Pivot Joint", "Fixed Joint"], a: 0 },
+        { s: "Science", q: "Materials through which light cannot pass at all are called:", opts: ["Opaque", "Transparent", "Translucent", "Luminous"], a: 0 },
+        { s: "Science", q: "An electric cell converts chemical energy into:", opts: ["Electrical Energy", "Heat Energy", "Light Energy", "Sound Energy"], a: 0 },
+        { s: "Science", q: "The magnetic poles of a bar magnet are located at:", opts: ["Its two ends", "Its middle", "Uniformly all over", "At one end only"], a: 0 },
+        { s: "Science", q: "The percentage of oxygen gas in atmospheric air is approximately:", opts: ["21%", "78%", "1%", "0.04%"], a: 0 },
+        { s: "Science", q: "The process of loss of water vapor through plant leaves is:", opts: ["Transpiration", "Respiration", "Photosynthesis", "Germination"], a: 0 },
+        { s: "Science", q: "Which of the following organisms does not have bones?", opts: ["Earthworm", "Fish", "Bird", "Snake"], a: 0 },
+        { s: "Science", q: "Which of the following is a non-magnetic material?", opts: ["Wood", "Iron", "Nickel", "Cobalt"], a: 0 },
+        { s: "Social Science", q: "The Indus Valley Civilization was famous for its planned cities like:", opts: ["Harappa and Mohenjodaro", "Pataliputra", "Hastinapur", "Ujjain"], a: 0 },
+        { s: "Social Science", q: "The earliest Veda composed in ancient India is:", opts: ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"], a: 0 },
+        { s: "Social Science", q: "Ashoka the Great embraced Buddhism after which historical war?", opts: ["Kalinga War", "Battle of Panipat", "Battle of Hydaspes", "Magadha War"], a: 0 },
+        { s: "Social Science", q: "The imaginary line dividing Earth into Northern and Southern Hemispheres is:", opts: ["Equator", "Tropic of Cancer", "Tropic of Capricorn", "Prime Meridian"], a: 0 },
+        { s: "Social Science", q: "Which planet is closest to the Sun in our solar system?", opts: ["Mercury", "Venus", "Mars", "Earth"], a: 0 },
+        { s: "Social Science", q: "Which is the largest continent in the world by area?", opts: ["Asia", "Africa", "North America", "Europe"], a: 0 },
+        { s: "Social Science", q: "The Himalayan mountain range is an example of:", opts: ["Young Fold Mountains", "Block Mountains", "Volcanic Mountains", "Residual Mountains"], a: 0 },
+        { s: "Social Science", q: "The Gram Panchayat is elected for a term of:", opts: ["5 Years", "6 Years", "4 Years", "3 Years"], a: 0 },
+        { s: "Social Science", q: "Who wrote the famous Sanskrit play 'Abhijnanashakuntalam'?", opts: ["Kalidasa", "Aryabhata", "Banabhatta", "Chanakya"], a: 0 },
+        { s: "Social Science", q: "Which direction does the Pole Star (Dhruva Tara) indicate in the night sky?", opts: ["North", "South", "East", "West"], a: 0 }
+      ]
+    };
+
+    // --- Quiz Engine State Variables ---
+    let selectedClass = "10";
+    let activeQuizSet = [];
+    let currentQIndex = 0;
+    let userScore = 0;
+    let quizLocked = false;
+
+    function startTwentyMarkQuiz() {
+      selectedClass = document.getElementById('studentClassSelect').value;
+      const rawBank = questionBank[selectedClass] || questionBank["10"];
+      
+      // Shuffle the class's pool and randomly select exactly 20 questions
+      const shuffled = [...rawBank].sort(() => 0.5 - Math.random());
+      activeQuizSet = shuffled.slice(0, 20);
+
+      currentQIndex = 0;
+      userScore = 0;
+      quizLocked = false;
+
+      document.getElementById('modalQuizTitle').innerText = `📝 Class ${selectedClass} Scholarship Quiz (20 Marks)`;
+      document.getElementById('quizActiveView').style.display = "block";
+      document.getElementById('quizResultView').style.display = "none";
+      document.getElementById('quizModal').style.display = "flex";
+
+      renderQuestion();
+    }
+
+    function closeQuizModal() {
+      document.getElementById('quizModal').style.display = "none";
+    }
+
+    function renderQuestion() {
+      quizLocked = false;
+      const item = activeQuizSet[currentQIndex];
+
+      document.getElementById('qSubjectTag').innerText = item.s;
+      document.getElementById('qProgressText').innerText = `Question ${currentQIndex + 1} of 20 (1 Mark)`;
+      document.getElementById('qQuestionText').innerText = item.q;
+
+      const optsBox = document.getElementById('qOptionsContainer');
+      optsBox.innerHTML = "";
+
+      // Randomize options order on each question display
+      const optionsWithIndices = item.opts.map((opt, idx) => ({ text: opt, isCorrect: idx === item.a }));
+      const shuffledOpts = optionsWithIndices.sort(() => 0.5 - Math.random());
+
+      shuffledOpts.forEach((optObj) => {
+        const btn = document.createElement('button');
+        btn.className = "quiz-opt-btn";
+        btn.innerText = optObj.text;
+        btn.onclick = () => handleAnswerSelect(optObj.isCorrect, btn);
+        optsBox.appendChild(btn);
+      });
+    }
+
+    function handleAnswerSelect(isCorrect, clickedBtn) {
+      if (quizLocked) return;
+      quizLocked = true;
+
+      if (isCorrect) {
+        userScore++;
+        clickedBtn.classList.add('correct');
+      } else {
+        clickedBtn.classList.add('wrong');
+      }
+
+      setTimeout(() => {
+        currentQIndex++;
+        if (currentQIndex < activeQuizSet.length) {
+          renderQuestion();
+        } else {
+          showFinalScore();
+        }
+      }, 650);
+    }
+
+    function showFinalScore() {
+      document.getElementById('quizActiveView').style.display = "none";
+      document.getElementById('quizResultView').style.display = "block";
+      document.getElementById('finalScoreVal').innerText = `${userScore}/20`;
+
+      let title = "";
+      let advice = "";
+      let emoji = "🏆";
+
+      if (userScore >= 18) {
+        emoji = "🏆🧑‍🎓✨";
+        title = "Outstanding! Future Topper Material!";
+        advice = "Your concepts across Maths, Science, and Social Science are exceptional. You qualify for our highest scholarship & direct faculty mentorship!";
+      } else if (userScore >= 14) {
+        emoji = "🌟👏";
+        title = "Great Job! Solid Foundation!";
+        advice = "You have a strong understanding of core concepts. Fine-tuning time-management and practicing DPP sheets will push you to 100%.";
+      } else if (userScore >= 10) {
+        emoji = "📚👍";
+        title = "Good Attempt! Room for Growth.";
+        advice = "You know the basics well, but key formulas and conceptual clarity in tricky questions need revision.";
+      } else {
+        emoji = "🎯💡";
+        title = "Keep Practicing! Build Strong Concepts.";
+        advice = "Don't worry! Poddar Classes foundation batches are specifically designed to build conceptual mastery from the ground up.";
+      }
+
+      document.getElementById('resultEmoji').innerText = emoji;
+      document.getElementById('scoreGradeTitle').innerText = title;
+      document.getElementById('scoreAdviceBody').innerText = advice;
+
+      const claimMessage = `*Scholarship Quiz Result - Poddar Classes*%0A` +
+                           `*Class:* ${selectedClass}%0A` +
+                           `*Score:* ${userScore}/20 Marks%0A` +
+                           `*Remarks:* ${title}%0A` +
+                           `I have completed the 20-mark quiz and would like to claim my batch counseling & trial seat!`;
+
+      document.getElementById('claimScoreBtn').href = `https://wa.me/${coachingWhatsApp}?text=${encodeURIComponent(claimMessage)}`;
+    }
+  </script>
+
+</body>
+</html>
