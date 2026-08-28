@@ -123,10 +123,28 @@
     .btn-accent {
       background-color: var(--accent);
       color: #ffffff;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
     }
 
     .btn-accent:hover {
       background-color: var(--accent-hover);
+      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-light {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline-light:hover {
+      background-color: #ffffff;
+      color: var(--primary);
+      border-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
 
     .btn-whatsapp {
@@ -550,7 +568,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="container nav-container">
       <a href="#" class="brand-logo">PODDAR <span>CLASSES</span></a>
@@ -564,7 +581,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <header class="hero">
     <div class="container">
       <span class="hero-tagline">Admissions Open for New Batches</span>
@@ -572,12 +588,11 @@
       <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-accent">Apply for Admission</a>
-        <a href="#resources" class="btn btn-primary">Browse Study Notes</a>
+        <a href="tel:+916207987945" class="btn btn-outline-light">📞 Call Now</a>
       </div>
     </div>
   </header>
 
-  <!-- Why Choose Us -->
   <section id="about">
     <div class="container">
       <div class="section-header">
@@ -610,7 +625,6 @@
     </div>
   </section>
 
-  <!-- Courses Section -->
   <section id="courses" style="background-color: #f8fafc; border-top: 1px solid var(--border);">
     <div class="container">
       <div class="section-header">
@@ -657,195 +671,4 @@
             <span>Final Revision & Mock Series</span>
           </div>
           <div class="course-body">
-            <ul class="course-features">
-              <li>High-yield topic revision sprints</li>
-              <li>Formula sheets & quick-reference charts</li>
-              <li>Full-length simulated test papers</li>
-              <li>Special doubt-resolution marathons</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Enroll in Crash Course</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GitHub Resources Section -->
-  <section id="resources">
-    <div class="container">
-      <div class="portal-banner">
-        <div class="portal-text">
-          <h3>📦 Student Study Portal & GitHub Repo</h3>
-          <p>Directly download syllabus PDFs, weekly assignment solutions, practice sheets, and lecture summaries maintained live by our faculty.</p>
-        </div>
-        <a href="https://github.com" target="_blank" class="btn btn-accent">Open GitHub Study Portal ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beautifully Aligned FAQ & Admission Form Section -->
-  <section id="contact" class="section-contact-faq">
-    <div class="container">
-      <div class="split-layout">
-        
-        <!-- Left Side: FAQs -->
-        <div>
-          <div class="split-header">
-            <span class="side-badge faq-badge">Common Questions</span>
-            <h3>Frequently Asked Questions</h3>
-            <p>Everything you need to know about our batches, resources, and mentoring.</p>
-          </div>
-
-          <div class="faq-container">
-            <details class="faq-item" open>
-              <summary class="faq-question">
-                What is the typical batch size at Poddar Classes?
-                <span class="faq-chevron">▼</span>
-              </summary>
-              <div class="faq-answer">
-                We purposefully maintain small, focused batch sizes to guarantee individual mentorship, interactive class participation, and prompt doubt resolution.
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary class="faq-question">
-                How are student evaluations and tests conducted?
-                <span class="faq-chevron">▼</span>
-              </summary>
-              <div class="faq-answer">
-                We conduct weekly unit tests alongside comprehensive monthly mock exams. Every assessment includes itemized performance analytics and detailed paper discussions.
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary class="faq-question">
-                How do students access digital notes and assignments?
-                <span class="faq-chevron">▼</span>
-              </summary>
-              <div class="faq-answer">
-                Enrolled students receive printed classroom modules as well as 24/7 online access to revision notes, question banks, and DPP solutions through our official GitHub repository.
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary class="faq-question">
-                Are demo or trial sessions available for new students?
-                <span class="faq-chevron">▼</span>
-              </summary>
-              <div class="faq-answer">
-                Yes! Prospective students can attend up to two demo classes upon submitting the admission enquiry form.
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <!-- Right Side: Clean Admission Card -->
-        <div>
-          <div class="contact-form-card">
-            <div class="split-header" style="margin-bottom: 1.25rem;">
-              <span class="side-badge form-badge">Direct WhatsApp Connect</span>
-              <h3 style="font-size: 1.45rem;">Admission Enquiry</h3>
-              <p>Fill out the form below to message our counseling desk directly on WhatsApp.</p>
-            </div>
-            
-            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
-              <div class="form-group">
-                <label for="wa_name">Student Full Name</label>
-                <input type="text" id="wa_name" placeholder="e.g. Rahul Kumar" required />
-              </div>
-
-              <div class="form-group">
-                <label for="wa_phone">WhatsApp Contact Number</label>
-                <input type="tel" id="wa_phone" placeholder="e.g. 9876543210" required />
-              </div>
-
-              <div class="form-group">
-                <label for="wa_program">Select Program</label>
-                <select id="wa_program" required>
-                  <option value="">Select a Course</option>
-                  <option value="Foundation Course">Foundation Course</option>
-                  <option value="Target Exam Batch">Target Exam Batch</option>
-                  <option value="Crash Course & Test Series">Crash Course & Test Series</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="wa_message">Queries / Remarks (Optional)</label>
-                <textarea id="wa_message" rows="3" placeholder="Current class, target exam, or questions..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 0.8rem;">
-                💬 Send Enquiry via WhatsApp
-              </button>
-              
-              <p class="form-note">🔒 Your information is confidential and used only for admissions.</p>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4 style="color: #fbbf24;">PODDAR CLASSES</h4>
-          <p>Dedicated to delivering quality coaching, solid conceptual grounding, and continuous mentorship for competitive and academic success.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#courses">Courses Offered</a></li>
-            <li><a href="#resources">Digital Notes</a></li>
-            <li><a href="#contact">Admission Desk</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Connect With Us</h4>
-          <ul>
-            <li>📍 Pranwati Lane Vikramshila colony Tilkamanjhi Bhagalpur 812001</li>
-            <li>📞 Phone: +916207987945</li>
-            <li>✉️ Email: poddarclasses1@gmail.com</li>
-            <li>🕒 Mon – Sat: 8:00 AM – 7:00 PM</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; Poddar Classes. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp Script -->
-  <script>
-    function sendToWhatsApp(e) {
-      e.preventDefault();
-      
-      // Enter your coaching WhatsApp number with country code (no + or dashes)
-      const coachingNumber = "917903638853"; 
-
-      const name = document.getElementById('wa_name').value;
-      const phone = document.getElementById('wa_phone').value;
-      const program = document.getElementById('wa_program').value;
-      const message = document.getElementById('wa_message').value;
-
-      const text = `*New Admission Enquiry - Poddar Classes*%0A` +
-                   `*Name:* ${encodeURIComponent(name)}%0A` +
-                   `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                   `*Program:* ${encodeURIComponent(program)}%0A` +
-                   `*Message:* ${encodeURIComponent(message || 'N/A')}`;
-
-      const url = `https://wa.me/${coachingNumber}?text=${text}`;
-      window.open(url, '_blank');
-    }
-  </script>
-
-</body>
-</html>
+            <ul
