@@ -12,6 +12,8 @@
       --primary-dark: #172554;
       --accent: #f59e0b;
       --accent-hover: #d97706;
+      --whatsapp-green: #25D366;
+      --whatsapp-hover: #1eb956;
       --text-main: #0f172a;
       --text-muted: #475569;
       --bg-light: #f8fafc;
@@ -117,6 +119,15 @@
 
     .btn-accent:hover {
       background-color: var(--accent-hover);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: var(--white);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
     }
 
     /* --- Hero Section --- */
@@ -323,9 +334,6 @@
       background: #f1f5f9;
       font-weight: 600;
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .faq-answer {
@@ -335,7 +343,7 @@
       border-top: 1px solid var(--border);
     }
 
-    /* --- Form --- */
+    /* --- Contact Form --- */
     .contact-form-card {
       background: var(--white);
       padding: 2rem;
@@ -577,87 +585,43 @@
 
           <div class="faq-item">
             <div class="faq-question">Are trial / demo classes available?</div>
-            <div class="faq-answer">Yes, we offer up to 2 demo sessions for new applicants upon filling out the enquiry form.</div>
+            <div class="faq-answer">Yes, we offer up to 2 demo sessions for new applicants upon sending an enquiry.</div>
           </div>
         </div>
 
         <div>
           <div class="contact-form-card">
             <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Student Enquiry / Admission</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Fill in your details and our team will get back to you with batch schedules.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Submit this form to send your admission details directly to our WhatsApp.</p>
             
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Poddar Classes! We will get in touch shortly.');">
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
               <div class="form-group">
-                <label for="name">Student Name</label>
-                <input type="text" id="name" placeholder="e.g. John Doe" required />
+                <label for="wa_name">Student Name</label>
+                <input type="text" id="wa_name" placeholder="e.g. Rahul Kumar" required />
               </div>
 
               <div class="form-group">
-                <label for="phone">Phone / WhatsApp Number</label>
-                <input type="tel" id="phone" placeholder="e.g. +91 98765 43210" required />
+                <label for="wa_phone">Phone Number</label>
+                <input type="tel" id="wa_phone" placeholder="e.g. 9876543210" required />
               </div>
 
               <div class="form-group">
-                <label for="program">Interested Program</label>
-                <select id="program" required>
+                <label for="wa_program">Interested Program</label>
+                <select id="wa_program" required>
                   <option value="">Select a Course</option>
-                  <option value="foundation">Foundation Course</option>
-                  <option value="target">Target Exam Batch</option>
-                  <option value="crash">Crash Course & Test Series</option>
+                  <option value="Foundation Course">Foundation Course</option>
+                  <option value="Target Exam Batch">Target Exam Batch</option>
+                  <option value="Crash Course & Test Series">Crash Course & Test Series</option>
                 </select>
-              </div><form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
-  <div class="form-group">
-    <label for="wa_name">Student Name</label>
-    <input type="text" id="wa_name" placeholder="e.g. Rahul Kumar" required />
-  </div>
+              </div>
 
-  <div class="form-group">
-    <label for="wa_phone">Phone Number</label>
-    <input type="tel" id="wa_phone" placeholder="e.g. +91 98765 43210" required />
-  </div>
+              <div class="form-group">
+                <label for="wa_message">Message / Queries (Optional)</label>
+                <textarea id="wa_message" rows="3" placeholder="Tell us your target exam, current class, or questions..."></textarea>
+              </div>
 
-  <div class="form-group">
-    <label for="wa_program">Interested Program</label>
-    <select id="wa_program" required>
-      <option value="">Select a Course</option>
-      <option value="Foundation Course">Foundation Course</option>
-      <option value="Target Exam Batch">Target Exam Batch</option>
-      <option value="Crash Course">Crash Course & Test Series</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="wa_message">Message / Queries</label>
-    <textarea id="wa_message" rows="3" placeholder="Any specific requirements..."></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary" style="width: 100%; background-color: #25D366; color: white;">Send via WhatsApp</button>
-</form>
-
-<script>
-function sendToWhatsApp(e) {
-  e.preventDefault();
-  
-  // Enter your coaching WhatsApp number with country code (no + or dashes)
-  const coachingNumber = "917903638853"; 
-
-  const name = document.getElementById('wa_name').value;
-  const phone = document.getElementById('wa_phone').value;
-  const program = document.getElementById('wa_program').value;
-  const message = document.getElementById('wa_message').value;
-
-  const text = `*New Admission Enquiry - Poddar Classes*%0A` +
-               `*Name:* ${encodeURIComponent(name)}%0A` +
-               `*Phone:* ${encodeURIComponent(phone)}%0A` +
-               `*Program:* ${encodeURIComponent(program)}%0A` +
-               `*Message:* ${encodeURIComponent(message || 'N/A')}`;
-
-  const url = `https://wa.me/${coachingNumber}?text=${text}`;
-  window.open(url, '_blank');
-}
-</script>
-
- 
+              <button type="submit" class="btn btn-whatsapp" style="width: 100%;">💬 Send Enquiry via WhatsApp</button>
+            </form>
           </div>
         </div>
 
@@ -686,9 +650,9 @@ function sendToWhatsApp(e) {
         <div class="footer-col">
           <h4>Connect With Us</h4>
           <ul>
-            <li>📍 Pranwati Lane Vikrmshila colony Tilkamanjhi Bhagalpur 812001 </li>
-            <li>📞 Phone: +91 [+917903638853]</li>
-            <li>✉️ Email: poddarclasses1@gmail.com</li>
+            <li>📍 Coaching Center Address</li>
+            <li>📞 Phone: +91 [Your Contact Number]</li>
+            <li>✉️ Email: contact@poddarclasses.com</li>
             <li>🕒 Mon – Sat: 8:00 AM – 7:00 PM</li>
           </ul>
         </div>
@@ -699,6 +663,29 @@ function sendToWhatsApp(e) {
       </div>
     </div>
   </footer>
+
+  <script>
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      
+      // Replace with your 10-digit coaching phone number prefixed by country code 91 (e.g. "919876543210")
+      const coachingNumber = "919876543210"; 
+
+      const name = document.getElementById('wa_name').value;
+      const phone = document.getElementById('wa_phone').value;
+      const program = document.getElementById('wa_program').value;
+      const message = document.getElementById('wa_message').value;
+
+      const text = `*New Admission Enquiry - Poddar Classes*%0A` +
+                   `*Name:* ${encodeURIComponent(name)}%0A` +
+                   `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                   `*Program:* ${encodeURIComponent(program)}%0A` +
+                   `*Message:* ${encodeURIComponent(message || 'N/A')}`;
+
+      const url = `https://wa.me/${coachingNumber}?text=${text}`;
+      window.open(url, '_blank');
+    }
+  </script>
 
 </body>
 </html>
