@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poddar Classes | Excellence in Academic & Competitive Coaching</title>
+  <meta name="description" content="Official website for Poddar Classes. Comprehensive coaching, study resources, test series, and personalized mentorship." />
+  
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: var(--white);
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero-tagline {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #cbd5e1;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* --- Section Setup --- */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* --- Features / Why Choose Us --- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* --- Courses --- */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1.5rem;
+    }
+
+    .course-header h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .course-header span {
+      font-size: 0.85rem;
+      color: #93c5fd;
+    }
+
+    .course-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-features li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .course-features li::before {
+      content: "✔";
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    /* --- GitHub Resources Banner --- */
+    .portal-banner {
+      background: #0f172a;
+      color: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .portal-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .portal-text p {
+      color: #94a3b8;
+      max-width: 600px;
+    }
+
+    /* --- FAQ & Contact Layout --- */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      background: #f1f5f9;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* --- Form --- */
+    .contact-form-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: 2px solid var(--primary);
+      border-color: transparent;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3.5rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .split-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">PODDAR <span>CLASSES</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn btn-primary">Enroll Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="hero-tagline">Admissions Open for Academic Batches</span>
+      <h1>Build Strong Concepts.<br />Achieve Top Results.</h1>
+      <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-accent">Apply for Admission</a>
+        <a href="#resources" class="btn btn-primary">Browse Study Notes</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Poddar Classes?</h2>
+        <p>A proven teaching methodology focused on foundational mastery and exam agility.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Concept-First Learning</h3>
+          <p>We build deep conceptual understanding rather than relying on rote memorization or surface-level shortcuts.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Daily Practice Problems</h3>
+          <p>Curated DPP sets and weekly mock assessments to track student performance and pinpoint weak spots.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Dedicated Doubt Sessions</h3>
+          <p>Regular small-group doubt-clearing sessions ensuring no student falls behind the syllabus schedule.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📂</div>
+          <h3>Open Digital Repository</h3>
+          <p>Instant access to lecture notes, formula cheat sheets, and previous-year question analyses on GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses" style="background-color: #f1f5f9;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Programs & Batches</h2>
+        <p>Targeted courses designed for rigorous school and competitive exam prep.</p>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-header">
+            <h3>Foundation Course</h3>
+            <span>School Curriculum & Fundamentals</span>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>Comprehensive NCERT / Board syllabus coverage</li>
+              <li>Strong foundation in Mathematics and Science</li>
+              <li>Regular chapter-wise test series</li>
+              <li>Detailed handwritten revision notes</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Enroll in Foundation</a>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-header" style="background: #1e293b;">
+            <h3>Target Exam Batch</h3>
+            <span>Competitive Exam Readiness</span>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>In-depth problem solving & logical aptitude</li>
+              <li>10+ Years Previous Year Questions (PYQs)</li>
+              <li>Time-management drills & full mocks</li>
+              <li>One-on-one progress mentoring</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent">Enroll in Target Batch</a>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-header">
+            <h3>Fast-Track Crash Course</h3>
+            <span>Final Revision & Mock Series</span>
+          </div>
+          <div class="course-body">
+            <ul class="course-features">
+              <li>High-yield topic revision sprints</li>
+              <li>Formula sheets & quick-reference charts</li>
+              <li>Full-length simulated test papers</li>
+              <li>Special doubt-resolution marathons</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Enroll in Crash Course</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="container">
+      <div class="portal-banner">
+        <div class="portal-text">
+          <h3>📦 Student Study Portal & GitHub Repo</h3>
+          <p>Directly download syllabus PDFs, weekly assignment solutions, practice sheets, and lecture summaries maintained live by our faculty.</p>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn btn-accent">Open GitHub Study Portal ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background-color: #f8fafc;">
+    <div class="container">
+      <div class="split-layout">
+        
+        <div id="faq">
+          <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about joining Poddar Classes.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">What is the batch size at Poddar Classes?</div>
+            <div class="faq-answer">We maintain limited batch sizes to ensure every student receives individual attention, active doubt clearing, and continuous mentoring.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How are tests and evaluations conducted?</div>
+            <div class="faq-answer">We conduct weekly topic tests and monthly full-length papers. Detailed scorecard analysis and answer discussions follow every test.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How do I access study materials?</div>
+            <div class="faq-answer">Students receive printed modules in class and 24/7 digital access to question banks, assignments, and revision notes through our official GitHub repository.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Are trial / demo classes available?</div>
+            <div class="faq-answer">Yes, we offer up to 2 demo sessions for new applicants upon filling out the enquiry form.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-form-card">
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Student Enquiry / Admission</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Fill in your details and our team will get back to you with batch schedules.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Poddar Classes! We will get in touch shortly.');">
+              <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" placeholder="e.g. John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp Number</label>
+                <input type="tel" id="phone" placeholder="e.g. +91 98765 43210" required />
+              </div>
+
+              <div class="form-group">
+                <label for="program">Interested Program</label>
+                <select id="program" required>
+                  <option value="">Select a Course</option>
+                  <option value="foundation">Foundation Course</option>
+                  <option value="target">Target Exam Batch</option>
+                  <option value="crash">Crash Course & Test Series</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message / Queries (Optional)</label>
+                <textarea id="message" rows="3" placeholder="Tell us your current class or target exam..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="color: #fbbf24;">PODDAR CLASSES</h4>
+          <p>Dedicated to delivering quality coaching, solid conceptual grounding, and continuous mentorship for competitive and academic success.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#courses">Courses Offered</a></li>
+            <li><a href="#resources">Digital Notes</a></li>
+            <li><a href="#faq">Student FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li>📍 Coaching Center Address</li>
+            <li>📞 Phone: +91 [Your Contact Number]</li>
+            <li>✉️ Email: contact@poddarclasses.com</li>
+            <li>🕒 Mon – Sat: 8:00 AM – 7:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Poddar Classes. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
