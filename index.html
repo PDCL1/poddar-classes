@@ -32,6 +32,10 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg-light);
       color: var(--text-main);
@@ -236,6 +240,7 @@
     /* --- Section Setup --- */
     section {
       padding: 4.5rem 0;
+      scroll-margin-top: 75px;
     }
 
     .section-header {
@@ -826,6 +831,7 @@
       border-radius: 12px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-lg);
+      scroll-margin-top: 90px;
     }
 
     .form-group {
@@ -942,8 +948,8 @@
         <li><a href="#quiz">Scholarship Quiz</a></li>
         <li><a href="#courses">Courses</a></li>
         <li><a href="#resources">Resources</a></li>
-        <li><a href="#contact">Admissions</a></li>
-        <li><a href="https://wa.me/917903638853?text=Hi%20Poddar%20Classes,%20I%20have%20an%20enquiry" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#enroll-form" class="btn btn-primary">Enroll Now</a></li>
       </ul>
     </div>
   </nav>
@@ -954,7 +960,7 @@
       <h1>Build Strong Concepts.<br />Achieve Top Results.</h1>
       <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials in Tilkamanjhi, Bhagalpur.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-accent">Apply for Admission</a>
+        <a href="#enroll-form" class="btn btn-accent">Apply for Admission</a>
         <a href="tel:+916207987945" class="btn btn-outline-light">📞 Call Now</a>
       </div>
     </div>
@@ -1090,7 +1096,7 @@
               <li>Regular chapter-wise test series</li>
               <li>Detailed handwritten revision notes</li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Enroll in Foundation</a>
+            <a href="#enroll-form" class="btn btn-primary">Enroll in Foundation</a>
           </div>
         </div>
 
@@ -1106,7 +1112,7 @@
               <li>Time-management drills & full mocks</li>
               <li>One-on-one progress mentoring</li>
             </ul>
-            <a href="#contact" class="btn btn-accent">Enroll in Target Batch</a>
+            <a href="#enroll-form" class="btn btn-accent">Enroll in Target Batch</a>
           </div>
         </div>
 
@@ -1122,7 +1128,7 @@
               <li>Full-length simulated test papers</li>
               <li>Special doubt-resolution marathons</li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Enroll in Crash Course</a>
+            <a href="#enroll-form" class="btn btn-primary">Enroll in Crash Course</a>
           </div>
         </div>
       </div>
@@ -1141,11 +1147,11 @@
     </div>
   </section>
 
-  <section id="contact" class="section-contact-faq">
+  <section class="section-contact-faq">
     <div class="container">
       <div class="split-layout">
         
-        <div>
+        <div id="faq">
           <div class="split-header">
             <span class="side-badge faq-badge">Common Questions</span>
             <h3>Frequently Asked Questions</h3>
@@ -1196,7 +1202,7 @@
         </div>
 
         <div>
-          <div class="contact-form-card">
+          <div id="enroll-form" class="contact-form-card">
             <div class="split-header" style="margin-bottom: 1.25rem;">
               <span class="side-badge form-badge">Direct WhatsApp Connect</span>
               <h3 style="font-size: 1.45rem;">Admission Enquiry</h3>
@@ -1257,7 +1263,7 @@
             <li><a href="#quiz">Scholarship Quiz</a></li>
             <li><a href="#courses">Courses Offered</a></li>
             <li><a href="#resources">Digital Notes</a></li>
-            <li><a href="#contact">Admission Desk</a></li>
+            <li><a href="#enroll-form">Admission Desk</a></li>
           </ul>
         </div>
 
