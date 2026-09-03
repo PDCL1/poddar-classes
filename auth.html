@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal - Poddar Classes</title>
+  <!-- Load Supabase Client from CDN -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 400px; margin: 60px auto; padding: 20px; }
+    .card { border: 1px solid #ddd; padding: 24px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    input { width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    button { width: 100%; padding: 10px; background: #0069ff; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-bottom: 8px; }
+    .secondary-btn { background: #555; }
+    #message { margin-top: 12px; font-size: 14px; text-align: center; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Auth Form Container -->
+  <div class="card" id="auth-box">
+    <h2>Student Login / Register</h2>
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="student@example.com" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="••••••••" required />
+
+    <button onclick="handleLogin()">Sign In</button>
+    <button class="secondary-btn" onclick="handleSignUp()">Create New Account</button>
+    <p id="message"></p>
+  </div>
+
+  <!-- Dashboard View (Shown after login) -->
+  <div class="card hidden" id="dashboard-box">
+    <h2>Welcome to Poddar Classes!</h2>
+    <p>Logged in as: <strong id="user-display-email"></strong></p>
+    <p>Here you can access study materials, notes, and session links.</p>
+    <button class="secondary-btn" onclick="handleSignOut()">Sign Out</button>
+  </div>
+
+  <script>
+    // 1. Replace with your actual Supabase credentials
+    const SUPABASE_URL = "https://andghhtmapzeizolfncr.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuZGdoaHRtYXB6ZWl6b2xmbmNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzNzU5MTYsImV4cCI6MjEwMzk1MTkxNn0.t6iP6veOzDxqhF0GH9-3H4jveUVF6B8YLjcOcYTq4Go";
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const messageEl = document.getElementById("message");
+    const authBox = document.getElementById("auth-box");
+    const dashboardBox = document.getElementById("dashboard-box");
+    const userEmailEl = document.getElementById("user-display-email");
+
+    // Check if user is already signed in on page load
+    async function checkSession() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      updateUI(session ? session.user : null);
+    }
+
+    // Toggle between Auth Form and Student Portal
+    function updateUI(user) {
+      if (user) {
+        authBox.classList.add("hidden");
+        dashboardBox.classList.remove("hidden");
+        userEmailEl.textContent = user.email;
+      } else {
+        authBox.classList.remove("hidden");
+        dashboardBox.classList.add("hidden");
+      }
+    }
+
+    // Sign Up New User
+    async function handleSignUp() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      messageEl.textContent = "Processing...";
+
+      const { data, error } = await supabaseClient.auth.signUp({ email, password });
+      if (error) {
+        messageEl.style.color = "red";
+        messageEl.textContent = error.message;
+      } else {
+        messageEl.style.color = "green";
+        messageEl.textContent = "Account created! Check your inbox to verify your email.";
+      }
+    }
+
+    // Sign In Existing User
+    async function handleLogin() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      messageEl.textContent = "Logging in...";
+
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) {
+        messageEl.style.color = "red";
+        messageEl.textContent = error.message;
+      } else {
+        updateUI(data.user);
+      }
+    }
+
+    // Sign Out
+    async function handleSignOut() {
+      await supabaseClient.auth.signOut();
+      updateUI(null);
+    }
+
+    checkSession();
+  </script>
+</body>
+</html>
