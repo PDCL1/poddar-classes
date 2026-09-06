@@ -1009,6 +1009,40 @@
       .nav-links { display: none; }
       .hero h1 { font-size: 2.1rem; }
     }
+    /* Hero Learning Modes Badges */
+    .learning-modes {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin: 1.5rem auto 1.75rem;
+      max-width: 820px;
+    }
+
+    .mode-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #f8fafc;
+      transition: all 0.2s ease;
+    }
+
+    .mode-pill:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #fbbf24;
+      transform: translateY(-2px);
+    }
+
+    .mode-pill span {
+      font-size: 1.1rem;
+    }
   </style>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -1037,17 +1071,31 @@
     </div>
   </nav>
 
-  <header class="hero">
+ <header class="hero">
     <div class="container">
       <span class="hero-tagline">Admissions Open for New Batches</span>
       <h1>Build Strong Concepts.<br />Achieve Top Results.</h1>
-      <p>At Poddar Classes, we deliver structured classroom teaching, daily practice problem (DPP) sets, personal mentorship, and comprehensive digital study materials in Tilkamanjhi, Bhagalpur.</p>
+      
+      <div class="learning-modes">
+        <div class="mode-pill">
+          <span>🏠</span> Home Tuition Available (1-on-1 Personalized)
+        </div>
+        <div class="mode-pill">
+          <span>💻</span> Live Interactive Online Classes
+        </div>
+        <div class="mode-pill">
+          <span>🏫</span> Offline Classroom Center (Tilkamanjhi)
+        </div>
+      </div>
+
+      <p>At Poddar Classes, we deliver structured classroom teaching, personalized home tuition, daily practice problem (DPP) sets, mentorship, and comprehensive digital study materials across Bhagalpur.</p>
+      
       <div class="hero-actions">
         <a href="#enroll-form" class="btn btn-accent">Apply for Admission</a>
         <a href="#" 
-                 onclick="Calendly.initPopupWidget({url: 'https://calendly.com/poddarclasses1/60min?hide_event_type_details=1&hide_gdpr_banner=1'});return false;" 
-                 style="display: inline-block; background-color: #0069ff; color: #ffffff; padding: 12px 24px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                  Book 1-on-1 Demo Session
+           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/poddarclasses1/60min?hide_event_type_details=1&hide_gdpr_banner=1'});return false;" 
+           style="display: inline-block; background-color: #0069ff; color: #ffffff; padding: 12px 24px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+           Book 1-on-1 Demo Session
         </a>
         <a href="tel:+916207987945" class="btn btn-outline-light">📞 Call Now</a>
       </div>
@@ -1308,12 +1356,14 @@
                 <input type="tel" id="wa_phone" placeholder="e.g. 9876543210" required />
               </div>
 
-              <div class="form-group">
-                <label for="wa_program">Select Program</label>
+             <div class="form-group">
+                <label for="wa_program">Select Program & Mode</label>
                 <select id="wa_program" required>
-                  <option value="">Select a Course</option>
-                  <option value="Foundation Course">Foundation Course (Class 6 - 10)</option>
-                  <option value="Target Exam Batch">Target Exam Batch</option>
+                  <option value="">Select a Course & Mode</option>
+                  <option value="Home Tuition (1-on-1 Personalized)">Home Tuition (1-on-1 in Bhagalpur)</option>
+                  <option value="Online Live Interactive Batch">Online Live Batch (Classes 6-10)</option>
+                  <option value="Offline Classroom Foundation (Tilkamanjhi)">Offline Center - Foundation Course</option>
+                  <option value="Target Exam Batch">Target Exam Batch (Class 10)</option>
                   <option value="Crash Course & Test Series">Crash Course & Test Series</option>
                 </select>
               </div>
