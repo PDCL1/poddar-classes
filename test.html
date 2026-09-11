@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>बिहार बोर्ड कक्षा 10 - ऑनलाइन टेस्ट | Poddar Classes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .timer-box {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d9534f;
+      float: right;
+    }
+    .question-block {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    button#submit-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button#submit-btn:hover {
+      background: #218838;
+    }
+    #result-box {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    .btn-download {
+      display: inline-block;
+      margin-top: 15px;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <header>
+    <span class="timer-box" id="timer">समय शेष: 30:00</span>
+    <h2>पोद्दार क्लासेज - वस्तुनिष्ठ परीक्षा</h2>
+    <p>बिहार बोर्ड (कक्षा 10) | कुल अंक: 30</p>
+  </header>
+
+  <!-- Quiz Form -->
+  <form id="quiz-form">
+    <div id="questions-list"></div>
+    <button type="button" id="submit-btn" onclick="submitTest()">टेस्ट सबमिट करें</button>
+  </form>
+
+  <!-- Result Section -->
+  <div id="result-box">
+    <h3>परीक्षा परिणाम</h3>
+    <h1 id="score-text" style="color: #28a745;"></h1>
+    <p id="feedback-text"></p>
+    <!-- Put your PDF file name or Google Drive link here -->
+    <a href="bihar-board-class10-solutions.pdf" download class="btn-download">
+      📥 समाधान PDF डाउनलोड करें (Download Solution PDF)
+    </a>
+  </div>
+</div>
+
+<script>
+  // 1. ADD YOUR 30 QUESTIONS HERE
+  // answer is the 0-indexed correct option (0 = A, 1 = B, 2 = C, 3 = D)
+  const quizData = [
+  { q: "1. रैखिक बहुपद के शून्यक की संख्या कितनी होती है?", options: ["2", "1", "3", "0"], ans: 1 },
+  { q: "2. बहुपद y³ - 2y² - √3y + 1/2 का घात है:", options: ["1/2", "2", "3", "3/2"], ans: 2 },
+  { q: "3. निम्नलिखित में से कौन बहुपद नहीं है?", options: ["(2/3)x + 1", "2 - x² + √3x", "1/(x - 1)", "x³"], ans: 2 },
+  { q: "4. द्विघात बहुपद x² - 3 के शून्यक होंगे:", options: ["(3, 3)", "(-√3, +√3)", "(-√3, -√3)", "(-3, -3)"], ans: 1 },
+  { q: "5. यदि बहुपद p(x) = x² - 2x + 5 के शून्यक α, β हों, तो α + β का मान होगा:", options: ["-2", "2", "5", "-5"], ans: 1 },
+  { q: "6. द्विघात बहुपद x² - 2x - 8 के शून्यक हैं:", options: ["(2, -4)", "(4, -2)", "(-2, -2)", "(4, 2)"], ans: 1 },
+  { q: "7. द्विघात बहुपद 2x² - 8x + 6 में शून्यकों का गुणनफल (α·β) क्या होगा?", options: ["3", "-3", "4", "-4"], ans: 0 },
+  { q: "8. त्रिघात बहुपद का सबसे व्यापक रूप है:", options: ["ax² + bx + c", "ax⁴ + bx³ + c", "ax³ + bx² + cx + d", "ax² + bx² + c"], ans: 2 },
+  { q: "9. यदि x² - 3x + 2 के शून्यक α और β हों, तो (1/α + 1/β) का मान होगा:", options: ["3/2", "-3/2", "2/3", "-2/3"], ans: 0 },
+  { q: "10. बहुपद x² - 11 के शून्यक हैं:", options: ["11, -11", "√11, -√11", "√11, √11", "इनमें से कोई नहीं"], ans: 1 },
+  { q: "11. द्विघात बहुपद जिसके शून्यकों का योग 2 और गुणनफल -15 है:", options: ["x² - 2x + 15", "x² - 2x - 15", "x² + 2x - 15", "x² + 2x + 15"], ans: 1 },
+  { q: "12. यदि P(x) = x² - 3x - 4 हो, तो P(x) का एक शून्यक है:", options: ["2", "4", "0", "3"], ans: 1 },
+  { q: "13. शून्य बहुपद का घात होता है:", options: ["0", "1", "अपरिभाषित", "इनमें से कोई नहीं"], ans: 2 },
+  { q: "14. यदि q(x) = x² - x + 4 के शून्यक α, β हों, तब α + β का मान है:", options: ["-1", "1", "4", "-4"], ans: 1 },
+  { q: "15. यदि y = p(x) का आलेख X-अक्ष को 3 बिंदुओं पर काटता है, तो शून्यकों की संख्या होगी:", options: ["1", "2", "3", "4"], ans: 2 },
+  { q: "16. बहुपद 5y² - 14y + 8 के शून्यकों का योग होगा:", options: ["5/2", "-14/5", "14/5", "8/5"], ans: 2 },
+  { q: "17. बहुपद x(2x - 5) - 3 के शून्यकों का योग है:", options: ["2/5", "-5/2", "-3/2", "5/2"], ans: 3 },
+  { q: "18. यदि x² - kx + 8 के शून्यकों का योग 6 है, तो k का मान होगा:", options: ["-6", "6", "8", "-8"], ans: 1 },
+  { q: "19. यदि α, β बहुपद f(x) = x² + x + 1 के मूल हों, तो 1/α + 1/β का मान है:", options: ["1", "-1", "0", "कोई नहीं"], ans: 1 },
+  { q: "20. त्रिघात बहुपद p(x) = x³ - 7x² + 5x + 9 में शून्यकों का गुणनफल (αβγ) होगा:", options: ["9", "-9", "7", "-7"], ans: 1 },
+  { q: "21. p(x) = x³ - 3x² + 5x - 3 को g(x) = x² - 2 से भाग देने पर शेषफल क्या होगा?", options: ["7x - 9", "7x + 9", "-7x + 9", "x - 3"], ans: 0 },
+  { q: "22. यदि 2x² + 3x + 1 को x + 2 से भाग दिया जाए, तो भागफल और शेषफल होंगे:", options: ["भागफल = 2x - 1, शेषफल = 3", "भागफल = 2x + 1, शेषफल = 3", "भागफल = 2x - 1, शेषफल = -3", "भागफल = 2x - 3, शेषफल = 7"], ans: 0 },
+  { q: "23. द्विघात बहुपद 4s² - 4s + 1 के शून्यक होंगे:", options: ["1/2, 1/2", "-1/2, -1/2", "2, 2", "1/4, 1/4"], ans: 0 },
+  { q: "24. एक द्विघात बहुपद जिसके शून्यक √3 तथा -√3 हैं:", options: ["x² + 3", "x² - 3", "x² - √3x + 3", "x² + √3x - 3"], ans: 1 },
+  { q: "25. यदि x³ - 3x² + x + 1 के शून्यक a - b, a, a + b हों, तो a का मान होगा:", options: ["1", "-1", "2", "-3"], ans: 0 },
+  { q: "26. यदि p(x) का घात 6 और g(x) का घात 2 हो, तो p(x)/g(x) का घात होगा:", options: ["3", "4", "2", "8"], ans: 1 },
+  { q: "27. द्विघात बहुपद x² + (1/6)x - 2 के शून्यक होंगे:", options: ["-3, 4", "-3/2, 4/3", "-4/3, 3/2", "इनमें से कोई नहीं"], ans: 1 },
+  { q: "28. बहुपद x² - 4x + 1 के मूलों का गुणनफल होगा:", options: ["-1", "1", "4", "-4"], ans: 1 },
+  { q: "29. बहुपद x² - 9x + 20 के शून्यक कौन-से हैं?", options: ["-4, -5", "4, 5", "-4, 5", "4, -5"], ans: 1 },
+  { q: "30. किस द्विघात बहुपद के शून्यकों का योग -3 तथा गुणनफल 2 है?", options: ["x² + 3x + 2", "x² + 2x - 3", "x² - 3x - 2", "x² - 3x + 2"], ans: 0 }
+];
+
+  // 2. RENDER QUESTIONS
+  const questionsList = document.getElementById("questions-list");
+  quizData.forEach((item, index) => {
+    let qDiv = document.createElement("div");
+    qDiv.className = "question-block";
+    
+    let optHtml = item.options.map((opt, i) => `
+      <label>
+        <input type="radio" name="q${index}" value="${i}">
+        ${opt}
+      </label>
+    `).join("");
+
+    qDiv.innerHTML = `<div class="question-title">${item.q}</div><div class="options">${optHtml}</div>`;
+    questionsList.appendChild(qDiv);
+  });
+
+  // 3. TIMER LOGIC (e.g., 30 Minutes)
+  let timeLeft = 30 * 60; // 30 minutes in seconds
+  const timerElem = document.getElementById("timer");
+
+  const countdown = setInterval(() => {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    timerElem.innerText = `समय शेष: ${minutes}:${seconds}`;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      alert("समय समाप्त हो गया है! आपका टेस्ट स्वतः सबमिट किया जा रहा है।");
+      submitTest();
+    }
+    timeLeft--;
+  }, 1000);
+
+  // 4. SUBMIT & CALCULATE RESULT
+  function submitTest() {
+    clearInterval(countdown);
+    let score = 0;
+
+    quizData.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      if (selected && parseInt(selected.value) === item.ans) {
+        score++;
+      }
+    });
+
+    // Hide quiz and show result
+    document.getElementById("quiz-form").style.display = "none";
+    document.getElementById("timer").style.display = "none";
+    
+    const resultBox = document.getElementById("result-box");
+    resultBox.style.display = "block";
+    document.getElementById("score-text").innerText = `आपका कुल प्राप्तांक: ${score} / ${quizData.length}`;
+    document.getElementById("feedback-text").innerText = 
+      score >= 18 ? "शाबाश! आपने यह परीक्षा उत्तीर्ण कर ली है।" : "कृपया और अभ्यास करें।";
+  }
+</script>
+
+</body>
+</html>
